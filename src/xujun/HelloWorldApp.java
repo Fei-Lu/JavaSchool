@@ -12,8 +12,13 @@ public class HelloWorldApp {
     
     
     public static void main (String[] args) {
-        System.out.println("Hola Mundo");
-        int a = 3;
+        
         int b = 2;
+        byte c=127;
+        c = (byte) (c+1);
+        System.out.println("c="+String.valueOf(c));
+        Card f = new Card(1,6);
+     
+        
     }
 }

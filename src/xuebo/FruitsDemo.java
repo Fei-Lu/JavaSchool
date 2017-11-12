@@ -10,11 +10,12 @@ package xuebo;
  * @author xuebo
  */
 class Fruits {
-    String Name = "Sweet";
+//    String Name = "Sweet";
     String Color = "Red";
     boolean taste = true;
     boolean beautiful = true;
     void Letmetaste(boolean newTaste){
+     
         if (newTaste){
             System.out.println("Delicious");
         }

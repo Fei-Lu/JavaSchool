@@ -5,6 +5,8 @@
  */
 package xuebo;
 
+import java.io.BufferedWriter;
+
 /**
  *
  * @author xuebo
@@ -55,3 +57,14 @@ class BicycleDemo {
         bike2.printStates();
     }
 }
+
+//String outfileS = "";
+//        try {
+//            BufferedWriter bw = IOUtils.getTextWriter(outfileS);
+//            bw.write("Xuebo");
+//            bw.flush();
+//            bw.close();
+//        }
+//        catch(Exception e) {
+//            e.printStackTrace();
+//        }

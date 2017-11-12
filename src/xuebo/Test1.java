@@ -9,35 +9,39 @@ package xuebo;
  *
  * @author Xuebo Zhao
  */
-class Treess { 
+class Treess {
     void photosynthesis(){
-    System.out.println("I'm doing photosynthesis");
+        System.out.println("Trees are doing photosynthesis");
 }
     void respiration(){
-    System.out.println("I'm doing respiration");
+        System.out.println("Trees are doing respiration");
 }
     void transpiration(){
-    System.out.println("I'm doing transpiration");
+        System.out.println("Trees are doing transpiration");
 }
 }
 class AppleTree extends Treess { 
     void photosynthesis(){
-    System.out.println("AppleTree is doing photosynthesis");
+        System.out.println("AppleTree is doing photosynthesis");
     } 
     void photosynthesisTest1() {
-    this.photosynthesis(); 
-    super.photosynthesis();
+        this.photosynthesis(); 
+        super.photosynthesis();
     }
 }
 public class Test1 {
-  public static void main(String[] args) {
-    Treess a = new Treess();
-    Treess b = new Treess();
-    Treess c = new Treess();
-    a.photosynthesis();
-    b.respiration();
-    c.transpiration();
-    AppleTree d = new AppleTree();
-    d.photosynthesisTest1();
+    public Test1(String name){
+        System.out.println("Tree's name: "+ name);
+    }
+    public static void main(String[] args) {
+        Test1 myTest1 = new Test1("AppleTree");
+        Treess a = new Treess();
+        Treess b = new Treess();
+        Treess c = new Treess();
+        a.photosynthesis();
+        b.respiration();
+        c.transpiration();
+        AppleTree d = new AppleTree();
+        d.photosynthesisTest1();
   }
 }

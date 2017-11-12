@@ -11,53 +11,58 @@ package xuebo;
  */
 class Trees { 
     void photosynthesis(){
-    System.out.println("I'm doing photosynthesis");
-}
+        System.out.println("Trees are doing photosynthesis");
+    }
     void respiration(){
-    System.out.println("I'm doing respiration");
-}
+        System.out.println("Trees are doing respiration");
+    }
     void transpiration(){
-    System.out.println("I'm doing transpiration");
+        System.out.println("Trees are doing transpiration");
+    }
 }
 class AppleTrees extends Trees { 
     void photosynthesis(){
-    System.out.println("AppleTrees are doing photosynthesis");
+        System.out.println("AppleTrees are doing photosynthesis");
     } 
     void respiration(){
-    System.out.println("AppleTrees are doing respiration");
+        System.out.println("AppleTrees are doing respiration");
     }
     void transpiration(){
-    System.out.println("AppleTrees are doing transpiration");
+        System.out.println("AppleTrees are doing transpiration");
     }
     void photosynthesisTest() {
-    this.photosynthesis(); 
-    super.photosynthesis();
+        this.photosynthesis(); 
+//        super.photosynthesis();
     }
     void respirationTest() {
-    this.respiration(); 
-    super.respiration();
+        this.respiration(); 
+//        super.respiration();
     }
     void transpirationTest() {
-    this.transpiration(); 
-    super.transpiration();
-  }
-}
+        this.transpiration(); 
+//        super.transpiration();
+    }
 }
 public class Test {
-  public static void main(String[] args) {
-    Trees a = new Trees();
-    Trees b = new Trees();
-    Trees c = new Trees();
-    a.photosynthesis();
-    b.respiration();
-    c.transpiration();
-    AppleTrees d = new AppleTrees();
-    AppleTrees e = new AppleTrees();
-    AppleTrees f = new AppleTrees();
-    d.photosynthesisTest();
-    e.respirationTest();
-    f.transpirationTest();
-  }
+    public Test(String name){
+        System.out.println("Trees'name: "+ name);
+    }
+    public static void main(String[] args) {
+        Test myTest = new Test("AppleTrees");
+        Trees a = new Trees();
+        Trees b = new Trees();
+        Trees c = new Trees();
+        a.photosynthesis();
+        b.respiration();
+        c.transpiration();
+        AppleTrees d = new AppleTrees();
+        AppleTrees e = new AppleTrees();
+        AppleTrees f = new AppleTrees();
+        d.photosynthesisTest();
+        e.respirationTest();
+        f.transpirationTest();
+    }
+}
 
     
 

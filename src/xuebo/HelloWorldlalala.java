@@ -13,7 +13,6 @@ import java.io.BufferedWriter;
  */
 public class HelloWorldlalala {
     public static void main(String[] args){
-        Card card = new Card(1,13);
         System.out.println("Hello World lalala");
         String outfileS = "";
         try {

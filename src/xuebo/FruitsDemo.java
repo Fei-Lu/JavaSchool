@@ -34,5 +34,15 @@ public class FruitsDemo{
         Fruits apple2 = new Fruits();
         apple1.Letmetaste(true);
         apple2.Letmesee(true); 
+        String outfileS = "";
+//        try {
+//            BufferedWriter bw = IOUtils.getTextWriter(outfileS);
+//            bw.write("Xuebo");
+//            bw.flush();
+//            bw.close();
+//        }
+//        catch(Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }

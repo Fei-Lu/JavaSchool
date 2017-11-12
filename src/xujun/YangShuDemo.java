@@ -52,34 +52,26 @@ class Tree{
     String color="green";
     int height=4;
     int age=20;
+}
+
 class YangShu extends Tree implements changeTree{
     public void changeColor(String newValue) {
         if (color==newValue){
             System.out.println(super.color);
         }
-        else color = newValue;
-         System.out.println("yangShu的颜色="+color);
+        else color = newValue;System.out.println("YangShu's colour="+color);
     }
     public void changeHeight(int newValue) {
-         height = newValue;
-         System.out.println("yangShu的高度="+height);
-
+        if (height!=newValue){
+            System.out.println(newValue);
+        }
+        else System.out.println("YangShu's height="+this.height);
     }
     public void changeAge(int newValue) {
          age = newValue;
-         System.out.println("yangShu的年龄="+age);
+         System.out.println("YangShu's age="+age);
     //System.out.println( "color:"+ color );
     }
- public class YangShuDemo{
-    public void main (String[] args){
-        YangShu a=new YangShu();
-        a.changeColor("yellow");
-        a.changeHeight(4);
-        a.changeAge(22);   
-    }
- 
-}
-}
 }
 
 

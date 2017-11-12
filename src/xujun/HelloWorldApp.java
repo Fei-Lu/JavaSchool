@@ -19,6 +19,9 @@ public class HelloWorldApp {
         System.out.println("c="+String.valueOf(c));
         Card f = new Card(1,6);
      
-        
+        YangShu a=new YangShu();
+        a.changeColor("yellow");
+        a.changeHeight(4);
+        a.changeAge(22);   
     }
 }

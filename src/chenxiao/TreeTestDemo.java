@@ -9,6 +9,11 @@ package chenxiao;
  *
  * @author cauxu
  */
-public class DeckCards {
-    
+public class TreeTestDemo {
+    public static void main(String[] args){
+        PineTree Pt=new PineTree();
+        AppleTree At=new AppleTree();
+        System.out.println(PineTree.type);
+        Pt.photosynthesis(24,40);
+    }
 }

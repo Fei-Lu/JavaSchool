@@ -60,6 +60,7 @@ class SamDog implements DogInter{
             System.out.println("Feching for food");
         } 
     }
+    
 }
 public class DogDemo{
     /**
@@ -87,13 +88,22 @@ public class DogDemo{
         boolean b = false;
         char c = 0; // change =0 , 1, 10 to see difference
         String d = "testing";
-        byte e = 010; // change =0, 10, 010
+        byte e = 127; // change =0, 10, 010
         short f = 1;
         long g = 100;
         float h = 0; // chage 0, 1.0
         double i = 0.01;
+        e = (byte)(e + 1);
         System.out.println("a = "+a+"\tb = " + b+"\tc = "+c+"\td = "+
-            d+"\te = "+e+"\nf = "+ f + "\tg = " + g +"\th = "+ h
+            d+"\te = "+ e +"\nf = "+ f + "\tg = " + g +"\th = "+ h
         +"\ti = "+i);
+        int aNumber = 0;
+        if (aNumber >= 0)
+            if (aNumber == 0)
+                System.out.println("first string");
+            else
+                System.out.println("second string");
+        System.out.println("third string");
+        
     } 
 }

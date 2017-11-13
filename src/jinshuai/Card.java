@@ -12,7 +12,7 @@ package jinshuai;
 public class Card {
     private final int rank;
     private final int suit;
-
+    int value=3;
     // Kinds of suits
     public final static int DIAMONDS = 1;
     public final static int CLUBS    = 2;
@@ -108,7 +108,7 @@ public class Card {
         }    
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
     	
     	// must run program with -ea flag (java -ea ..) to
     	// use assert statements
@@ -130,6 +130,6 @@ public class Card {
         assert suitToString(CLUBS) == "Clubs";
         assert suitToString(HEARTS) == "Hearts";
         assert suitToString(SPADES) == "Spades";
-
-    }*/
+        
+    }
 }

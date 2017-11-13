@@ -5,13 +5,29 @@
  */
 package jinshuai;
 
+
+
 /**
  *
  * @author 靳帅
  */
-public class BreedingValueSite {
-    
-    public static void main (String[] args) {
+public class Breeding {
+    public void Breeding(){
+    }
+   public static void main (String[] args) {
+//Class and extends:
+    Maple highMaple=new Maple();
+    System.out.println(highMaple.height);
+    highMaple.SufferedDisease();
+    System.out.println(highMaple.height);
+    highMaple.watering();/* Methods from Interface*/
+    System.out.println(highMaple.height);
+    Plant Plants=new Plant();
+    Plants.ShowPlant();
+    Tree highTree=new Tree();
+    highTree.Showheight();
+//new Card
+        Card mycard=new Card(1, 1);
 //new object 
         Wheat kn199=new Wheat(3,2,3);
         System.out.println(kn199.wateringWheat(3));
@@ -45,10 +61,12 @@ public class BreedingValueSite {
           b=a;
           System.out.println(a[2]);
           System.out.println(b[2]);
+          
        }
       ;
     String wheatyield="high yield";
     public static int yieldbreeding(int yield) {
+        
         System.out.println("GotHighYieldBreed");
         yield=yield+1;
          return yield;

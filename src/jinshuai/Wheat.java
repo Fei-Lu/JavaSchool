@@ -10,10 +10,11 @@ package jinshuai;
  * @author 靳帅
  */
 //extends
-public class Wheat extends Plant  {
+public class Wheat extends Plant implements Irrigation{
     private int yield;
     private int grothrate;
     private int waterdemand;
+   
 //Constructors
     public Wheat(int startyield, int startgrothrate, int startwaterdemand){
         yield=startyield;
@@ -21,6 +22,7 @@ public class Wheat extends Plant  {
         waterdemand=startwaterdemand;
     }
     public int getyield(){
+        
         return yield;
         }
     public void setyield(int newyield){
@@ -42,6 +44,10 @@ public class Wheat extends Plant  {
         yield=yield+irrigationamount1+irrigationamount2;
         return yield;
     }
-    
+//interface
+    public Double watering(){
+        height=height+1;
+        return height;
+    }
            
 }

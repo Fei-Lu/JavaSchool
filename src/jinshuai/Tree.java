@@ -10,8 +10,13 @@ package jinshuai;
  * @author 靳帅
  */
 public class Tree extends Plant {
-    public double height=13;
+    
+    public int NumOfLeaf=100;
     public void Showheight(){
         System.out.println("Tree's height is"+height);
+    }
+    public int SetLeafNum(int NumOfLeaf){
+ //       this.NumOfLeaf=NumOfLeaf;
+        return NumOfLeaf;
     }
 }

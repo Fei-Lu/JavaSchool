@@ -15,6 +15,7 @@ public class Breeding {
     public void Breeding(){
     }
    public static void main (String[] args) {
+
 //Class and extends:
     Maple highMaple=new Maple();
     System.out.println(highMaple.height);
@@ -26,6 +27,12 @@ public class Breeding {
     Plants.ShowPlant();
     Tree highTree=new Tree();
     highTree.Showheight();
+//this:
+    highTree.NumOfLeaf=150;
+    System.out.println(highTree.NumOfLeaf);/*可直接更改*/
+    highTree.SetLeafNum(150);
+    
+    System.out.println(highTree.NumOfLeaf);/*无THIS时，不能更改*/
 //new Card
         Card mycard=new Card(1, 1);
 //new object 

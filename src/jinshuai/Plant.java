@@ -11,9 +11,11 @@ package jinshuai;
  */
 public class Plant {
     public double PhotosynthesisSpeed;
-    public double height=10;
+    public Double height=10.0;
     public static String Color ="green";
-    
+    public static void Plant(Double height){
+        
+    }
     public String SetColor(String Color){
         this.Color=Color;
         return Color;

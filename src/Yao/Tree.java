@@ -9,7 +9,7 @@ package Yao;
  *
  * @author yaozhou
  */
-class Tree {
+public class Tree {
     int years;
     double diameter;
     double height;

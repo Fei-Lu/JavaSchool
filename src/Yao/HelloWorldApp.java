@@ -15,11 +15,15 @@ public class HelloWorldApp {
 //
 //        System.out.println("hello2");
 //        
-        Tree tree1 = new Tree("orange");
-        PineApple tree2 = new PineApple(1,1.8,10.4,"yellow","PineApple");
-        tree1.getInfo();
-        tree2.getInfo();
-        PineApple tree3 = new PineApple(20);
-        tree3.getInfo();
+//        Tree tree1 = new Tree("orange");
+//        PineApple tree2 = new PineApple(1,1.8,10.4,"yellow","PineApple");
+//        tree1.getInfo();
+//        tree2.getInfo();
+//        PineApple tree3 = new PineApple(20);
+//        tree3.getInfo();
+        ShadowTest st = new ShadowTest();
+        ShadowTest.FirstLevel fl = st.new FirstLevel();
+        fl.methodInFirstLevel(23);
+        Tree treetest = new Tree(1973);
     }
 }

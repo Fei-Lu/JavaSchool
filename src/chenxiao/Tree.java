@@ -11,10 +11,11 @@ package chenxiao;
  */
 public class Tree {
     private int height;
-    public void photosynthesis(int CO2,int H2O){
+    public int photosynthesis(int CO2,int H2O){
         int O2=H2O/2;
         int Carbohydrate=CO2;
         System.out.println(O2);
+        return O2;//方法的第一个词是动词
     }
     public void setHeight(int height){
         this.height=height;
@@ -22,4 +23,4 @@ public class Tree {
     public int getHeight(){
         return this.height;
     }
-}
+}//constructor

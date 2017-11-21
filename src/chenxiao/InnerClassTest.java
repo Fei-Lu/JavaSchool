@@ -9,7 +9,6 @@ package chenxiao;
  *
  * @author cauxu
  */
-public interface Fructify {
-    public abstract void bearFruit();
-    public void bloom();
+public class InnerClassTest {
+    
 }

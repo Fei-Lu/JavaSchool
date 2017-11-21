@@ -15,7 +15,7 @@ public class Tree extends Plant {
     public void Showheight(){
         System.out.println("Tree's height is"+height);
     }
-    public int SetLeafNum(int NumOfLeaf){
+    public static int SetLeafNum(int NumOfLeaf){
  //       this.NumOfLeaf=NumOfLeaf;
         return NumOfLeaf;
     }

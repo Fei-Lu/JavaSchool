@@ -45,7 +45,7 @@ public class Wheat extends Plant implements Irrigation{
         return yield;
     }
 //interface
-    public Double watering(){
+    public double watering(){
         height=height+1;
         return height;
     }

@@ -11,9 +11,9 @@ package jinshuai;
  */
 public class Plant {
     public double PhotosynthesisSpeed;
-    public Double height=10.0;
+    public double height=10.0;
     public static String Color ="green";
-    public static void Plant(Double height){
+    public void Plant(double height){
         
     }
     public String SetColor(String Color){

@@ -10,5 +10,5 @@ package jinshuai;
  * @author 靳帅
  */
 public interface Irrigation {
-     public abstract Double watering();     
+     public double watering();     
 }

@@ -17,16 +17,23 @@ public class Breeding {
    public static void main (String[] args) {
 
 //Class and extends:
-    Maple highMaple=new Maple();
+    Yao.Tree a=new Yao.Tree(1973);
+    Yao.PineApple c=new Yao.PineApple(12,12,12,"yellow","abc");
+/*    Maple highMaple=new Maple();
     System.out.println(highMaple.height);
     highMaple.SufferedDisease();
     System.out.println(highMaple.height);
-    highMaple.watering();/* Methods from Interface*/
+    highMaple.watering();/* Methods from Interface
     System.out.println(highMaple.height);
     Plant Plants=new Plant();
-    Plants.ShowPlant();
+    Plants.ShowPlant();*/
     Tree highTree=new Tree();
     highTree.Showheight();
+    Maple bigMaple=new Maple("yellow");
+       System.out.println(bigMaple.leafcolor);
+    bigMaple.setcolor("blue");
+    System.out.println(bigMaple.leafcolor);
+
 //this:
     highTree.NumOfLeaf=150;
     System.out.println(highTree.NumOfLeaf);/*可直接更改*/
@@ -59,7 +66,7 @@ public class Breeding {
           NewAgriMinistry(BreedName2);
           System.out.println(BreedName2);
 //传值与传址-list-变-传址
-          int[] a=new int[3];
+/*          int[] a=new int[3];
           a[1]=1;
           a[2]=1;
           //a[3]=1;
@@ -68,7 +75,7 @@ public class Breeding {
           b=a;
           System.out.println(a[2]);
           System.out.println(b[2]);
-          
+          */
        }
       ;
     String wheatyield="high yield";

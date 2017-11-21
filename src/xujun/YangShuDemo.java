@@ -55,11 +55,11 @@ class Tree{
 }
 
 class YangShu extends Tree implements changeTree{
-    public void changeColor(String newValue) {
-        if (color==newValue){
+    public void changeColor(String newColor) {
+        if (color.equals(newColor)){
             System.out.println(super.color);
         }
-        else color = newValue;System.out.println("YangShu's colour="+color);
+        else color = newColor;System.out.println("YangShu's colour="+color);
     }
     public void changeHeight(int newValue) {
         if (height!=newValue){
@@ -73,6 +73,8 @@ class YangShu extends Tree implements changeTree{
     //System.out.println( "color:"+ color );
     }
 }
+
+
 
 
 

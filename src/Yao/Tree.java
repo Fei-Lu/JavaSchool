@@ -36,7 +36,7 @@ public class Tree {
         this.leafColor = leafColor;
         this.variety = variety;
     }
-    void growingState(String leafColor){
+    public void growingState(String leafColor){
         System.out.print("Growing state: ");
         if ("yellow".equals(leafColor)){
             System.out.println("Waring！Bad condition, need nutrition!");

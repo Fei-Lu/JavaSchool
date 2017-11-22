@@ -43,12 +43,12 @@ class AppleTrees extends Trees {
 //        super.transpiration();
     }
 }
-public class Treeslalala {
-    public Treeslalala(String name){
+public class TreesDemo {
+    public TreesDemo(String name){
         System.out.println("Trees'name: "+ name);
     }
     public static void main(String[] args) {
-        Treeslalala myTreeslalala = new Treeslalala("AppleTrees");
+        TreesDemo myTreeslalala = new TreesDemo("AppleTrees");
         Trees a = new Trees();
         Trees b = new Trees();
         Trees c = new Trees();

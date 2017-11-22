@@ -26,7 +26,9 @@ public class Entrance {
         //AnonymousClassExample ace = new AnonymousClassExample();
         //ace.sayHello();
         //Set main to run GUIHelloWorld.
+        //Set main to run CustomTextFieldSample.
         
+        /****************Lambda expression**********************/
         LambdaExpressionExample.tests();
         
         

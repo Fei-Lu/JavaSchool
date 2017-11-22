@@ -12,16 +12,17 @@ package jinshuai;
 public class Demo {
      public static void main(String[] args)
               {
-//static Nested class的创建，可以直接实例化:
-      OuterClass.StaticNestedClass myNestClass=new OuterClass.StaticNestedClass();
-//InnerClass的创建，不可以直接实例化，需要通过外部类的对象创建：
-      OuterClass myOuterClass=new OuterClass();
-      OuterClass.NestClass myInnerClass=myOuterClass.new NestClass();
-      //OuterClass.NestClass myInnerClass=new OuterClass.NestClass();
-//shadow:
- OuterClass st = new OuterClass();
-        OuterClass.FirstLevel fl = st.new FirstLevel();
-        fl.methodInFirstLevel(23);
+
+////static Nested class的创建，可以直接实例化:
+//      OuterClass.StaticNestedClass myNestClass=new OuterClass.StaticNestedClass();
+////InnerClass的创建，不可以直接实例化，需要通过外部类的对象创建：
+//      OuterClass myOuterClass=new OuterClass();
+//      OuterClass.NestClass myInnerClass=myOuterClass.new NestClass();
+//      //OuterClass.NestClass myInnerClass=new OuterClass.NestClass();
+////shadow:
+// OuterClass st = new OuterClass();
+//        OuterClass.FirstLevel fl = st.new FirstLevel();
+//        fl.methodInFirstLevel(23);
 //        Backward jinshuai=new Backward("jinshuai");
 //        jinshuai.toString("jinshuai");
 //        System.out.println(jinshuai.myString);

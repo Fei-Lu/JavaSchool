@@ -11,12 +11,30 @@ package fei;
  */
 public class Entrance {
     
-    public static void main (String[] args) {
-        //System.out.println("Hello, world!");
+    public Entrance () {
+        this.ClassAndObjects();
+    }
+    
+    public void ClassAndObjects () {
+        /*******Nested class*********/
         //NestedClassExample nce = new NestedClassExample ();
+        
+        /*********Local class******************/
         //LocalClassExample.validatePhoneNumber("123-456-7890", "456-7890");
-        AnonymousClassExample ace = new AnonymousClassExample();
-        ace.sayHello();
+        
+        /************Anonymous class*************************/
+        //AnonymousClassExample ace = new AnonymousClassExample();
+        //ace.sayHello();
+        //Set main to run GUIHelloWorld.
+        
+        LambdaExpressionExample.tests();
+        
+        
+    }
+    
+    public static void main (String[] args) {
+        new Entrance ();
+        
     }
 
 }

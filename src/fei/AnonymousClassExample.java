@@ -33,6 +33,7 @@ public class AnonymousClassExample {
       
         HelloWorld englishGreeting = new EnglishGreeting();
         
+        //Use anonymous class to implement and instanlize an interface
         HelloWorld frenchGreeting = new HelloWorld() {
             String name = "tout le monde";
             @Override

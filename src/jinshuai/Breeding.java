@@ -13,6 +13,9 @@ package jinshuai;
  */
 public class Breeding {
     public void Breeding(){
+        Breeding e=new Breeding(){
+    
+};
     }
    public static void main (String[] args) {
 

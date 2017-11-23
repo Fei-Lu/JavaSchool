@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package jinshuai;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.List;
 
 /**
  *
@@ -12,6 +17,28 @@ package jinshuai;
 public class Demo {
      public static void main(String[] args)
               {
+   
+    
+
+
+//
+//CharSequence anonymous=new CharSequence() {
+//    @Override
+//    public int length() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    @Override
+//    public char charAt(int index) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    @Override
+//    public CharSequence subSequence(int start, int end) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//    
+//};
 
 ////static Nested class的创建，可以直接实例化:
 //      OuterClass.StaticNestedClass myNestClass=new OuterClass.StaticNestedClass();

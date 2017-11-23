@@ -9,7 +9,7 @@ package Yao;
  *
  * @author yaozhou
  */
-public class HelloWorldApp {
+public class MainEntrance {
     public static void main(String[] args){
 //        Card card1 = new Card(12,1);
 //        
@@ -25,10 +25,16 @@ public class HelloWorldApp {
 //        ShadowTest.FirstLevel fl = st.new FirstLevel();
 //        fl.methodInFirstLevel(23);
 //        Tree treetest = new Tree(1973);
-          String a = new String("hello!");
-          StringBackwards aa = new StringBackwards(a);
-          String d = aa.getBackwardSequence();
-          System.out.println(aa.getBackwardSequence()) ;
-          
+//          String a = new String("hello!");
+//          StringBackwards aa = new StringBackwards(a);
+//          String d = aa.getBackwardSequence();
+//          System.out.println(aa.getBackwardSequence()) ;
+//          
+        new Thread(new Runnable(){
+            public void run() {
+                System.out.println("Ano class");
+            }
+        }).start();
+        new Thread ( () -> System.out.println("lamda expression")).start();
     }
 }

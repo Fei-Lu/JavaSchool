@@ -50,8 +50,8 @@ public class NestedClassExample {
      */
     public void test02 () {
         InnerClass ic1 = new InnerClass();
-        //This step causes runtime error
-        InnerClass ic2 = new OuterClass().creatObjectOfInnerClass();
+        //This step causes runtime error, StackOverflowError, because in->out->in
+        //InnerClass ic2 = new OuterClass().creatObjectOfInnerClass();
     }
     
     /**

@@ -55,5 +55,5 @@ public class AnonymousClassDemo {
         englishGreeting.greet();
         frenchGreeting.greetSomeone("Fred");
         spanishGreeting.greet();
-    }          
+    }   
 }

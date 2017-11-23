@@ -15,6 +15,12 @@ import static javafx.application.Application.launch;
  * @author xuebo
  */
 public class Entrance{
+    public Entrance () {
+        this.Objects();
+    }
+    public void Objects () {
+         PersonDemo.tests();
+    }
     public static void main(String[] args){
 //        //Hello World
 ////      System.out.println("Hello World!");
@@ -43,5 +49,6 @@ public class Entrance{
 //        
 //           //JavaFx
 //           launch(args);
+        new Entrance ();
     }   
 }

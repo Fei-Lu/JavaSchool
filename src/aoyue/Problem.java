@@ -9,10 +9,13 @@ package aoyue;
  *
  * @author Aoyue
  */
-public class HelloWorld {
-    
-    public static void main (String[] args) {
-        System.out.println("Hello!");
+public class Problem {
+    String s;
+    class Inner {
+            void testMethod() {
+                s = "Set from Inner";
+            }
     }
-    
 }
+    
+

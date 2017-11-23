@@ -44,6 +44,9 @@ public class HelloWorldApp {
         ds.printEven();
         
         
-        
+        CaseInsensitiveString cis = new CaseInsensitiveString("");
+        System.out.println();
+        String s = "polish";
+        System.out.print(s);
     }
 }

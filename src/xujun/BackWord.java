@@ -11,6 +11,7 @@ package xujun;
  */
 public class BackWord implements CharSequence {
     String a=null;
+    char[] b =null;
     BackWord(){
      String a;
      }
@@ -23,6 +24,7 @@ public class BackWord implements CharSequence {
           System.out.print(b[i]);
         }
     }
+    
    /* public void backOutPut(int i){
         for(int i=a.length()-1;i>=0;i--){
             System.out.println(cha);

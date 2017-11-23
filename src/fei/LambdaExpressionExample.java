@@ -18,7 +18,7 @@ import java.util.function.Predicate;
  */
 public class LambdaExpressionExample {
     
-    public static void tests () {
+    public static List<Person> createRoster () {
         int size = 100;
         String ss = "ABCDEFGHIGKLMNOPQRSTUVWXYZ";
         List<Person> roster = new ArrayList();
@@ -30,6 +30,12 @@ public class LambdaExpressionExample {
             Person.Sex sex = Math.random()>0.5? Person.Sex.MALE : Person.Sex.FEMALE;
             roster.add(new Person (name, age, sex, name+"@gmail.com"));
         }
+        return roster;
+    }
+    
+    public static void tests () {
+
+        List<Person> roster = LambdaExpressionExample.createRoster();
 
         printPersonsOlderThan (roster, 30);
         
@@ -227,6 +233,10 @@ class Person {
         this.emailAddress = emailAddress;
     }
     
+    public String getName () {
+        return name;
+    }
+    
     public int getAge() {
         return age;
     }
@@ -241,6 +251,10 @@ class Person {
     
     public String getEmailAddress () {
         return this.emailAddress;
+    }
+    
+    public static int compareByAge (Person a, Person b) {
+        return a.getAge() - b.getAge();
     }
 }
 

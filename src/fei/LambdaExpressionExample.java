@@ -189,9 +189,9 @@ public class LambdaExpressionExample {
     }
     
     public static void printPersonsWithPredicateFunction (List<Person> roster) {
-//        printPersonsWithPredicateImpl (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
+        printPersonsWithPredicateImpl (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
         //Why does the following work?
-        printPersons (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
+        //printPersons (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
     }
 }
 

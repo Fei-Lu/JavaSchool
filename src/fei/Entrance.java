@@ -12,10 +12,15 @@ package fei;
 public class Entrance {
     
     public Entrance () {
-        this.ClassAndObjects();
+        //this.ClassAndObjects();
+        this.annotation();
     }
     
-    public void ClassAndObjects () {
+    public void annotation () {
+        new AnnotationExample ();
+    }
+    
+    public void classAndObjects () {
         /*******Nested class*********/
         //NestedClassExample nce = new NestedClassExample ();
         

@@ -27,8 +27,4 @@ public interface OperateCar{
     int getRadarRear(double distanceToCar,
                        double speedOfCar);
 }
-public class OperateBMW760i implement OperateCar {
-    int signalTurn(Direction direction, boolean signalOn){    
-    }
-}
 

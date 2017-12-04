@@ -13,8 +13,8 @@ public class OuterClass {
     int a=1;
     public static int b=2;
    
-public class NestClass{
-         public void print(){
+    public class NestClass{
+        public void print(){
             System.out.println(b);
             //NestClass相当于普通的成员方法，可以访问静态和非静态变量
             System.out.println(a);
@@ -36,7 +36,7 @@ public class NestClass{
             //System.out.println(a);
         }
     }
-     public int x = 0;
+    public int x = 0;
 
     class FirstLevel {
 
@@ -47,5 +47,5 @@ public class NestClass{
             System.out.println("this.x = " + this.x);
             System.out.println("OutClass.this.x = " + OuterClass.this.x);
         }
-}
+    }
 }

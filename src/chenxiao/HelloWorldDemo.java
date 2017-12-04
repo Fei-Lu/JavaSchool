@@ -37,7 +37,7 @@ public class HelloWorldDemo {
         System.out.println(s);
         
         ShadowClass sc=new ShadowClass();
-        ShadowClass.innerclass ic=new ShadowClass.innerclass();//static nested class 可通过outerclass直接创建对象，
+        ShadowClass.staticclass ic=new ShadowClass.staticclass();//static nested class 可通过outerclass直接创建对象，
                                                                //但inner class需通过实现一个outclass的对象来创建其对象
         sc.toOuterClassValue();
         ic.toValue();

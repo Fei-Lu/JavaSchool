@@ -53,24 +53,12 @@ public class PersonDemo {
         
         processPersionsWithAgregateFunctionMultiThreads (roster);
         
-        testCalculator ();
+    
         
-        testScope ();
+       
     }
     
-    public static void testScope () {
-        LambdaScopeTest st = new LambdaScopeTest();
-        LambdaScopeTest.FirstLevel fl = st.new FirstLevel();
-        fl.methodInFirstLevel(23);
-    }
-    
-    public static void testCalculator () {
-        LambdaCalculator myApp = new LambdaCalculator();
-        LambdaCalculator.IntegerMath addition = (a, b) -> a + b;
-        LambdaCalculator.IntegerMath subtraction = (a, b) -> a - b;
-        System.out.println("40 + 2 = " + myApp.operateBinary(40, 2, addition));
-        System.out.println("20 - 10 = " + myApp.operateBinary(20, 10, subtraction));
-    }
+  
     
     public static void processPersionsWithAgregateFunctionMultiThreads (List<Person> roster) {
         roster.parallelStream().filter(p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25)
@@ -274,13 +262,7 @@ class LambdaScopeClass {
         public int x = 1;
 
         void methodInFirstLevel(int x) {
-            
-            // The following statement causes the compiler to generate
-            // the error "local variables referenced from a lambda expression
-            // must be final or effectively final" in statement A:
-            //
-            // x = 99;
-            
+          
             Consumer<Integer> myConsumer = (y) -> 
             {
                 System.out.println("x = " + x); // Statement A

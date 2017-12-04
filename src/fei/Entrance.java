@@ -29,10 +29,10 @@ public class Entrance {
         //Set main to run CustomTextFieldSample.
         
         /****************Lambda expression**********************/
-        //LambdaExpressionExample.tests();
+        LambdaExpressionExample.tests();
         
         /*******************Method reference****************************/
-        new MethodReferencesTest().printPerson();
+//        new MethodReferencesTest().printPerson();
         
         
     }

@@ -189,9 +189,9 @@ public class LambdaExpressionExample {
     }
     
     public static void printPersonsWithPredicateFunction (List<Person> roster) {
-        printPersonsWithPredicateImpl (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
+//        printPersonsWithPredicateImpl (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
         //Why does the following work?
-//        printPersons (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
+        printPersons (roster, p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25);
     }
 }
 
@@ -270,12 +270,12 @@ class LambdaCalculator {
     public static void main(String... args) {
     
         LambdaCalculator myApp = new LambdaCalculator();
-        IntegerMath addition = (a, b) -> a + b;
-        IntegerMath subtraction = (a, b) -> a - b;
-        System.out.println("40 + 2 = " +
-            myApp.operateBinary(40, 2, addition));
-        System.out.println("20 - 10 = " +
-            myApp.operateBinary(20, 10, subtraction));    
+//        IntegerMath addition = (a, b) -> a + b;
+//        IntegerMath subtraction = (a, b) -> a - b;
+//        System.out.println("40 + 2 = " +
+//            myApp.operateBinary(40, 2, addition));
+//        System.out.println("20 - 10 = " +
+//            myApp.operateBinary(20, 10, subtraction));    
     }
 }
 

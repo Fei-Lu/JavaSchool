@@ -46,6 +46,9 @@ class Mountainabike extends Bicycle{
         super(startCadence, startSpeed, startGear);
         seatHeight = startHeight;
     } 
+    public void setHight(int newValue){
+        seatHeight = newValue;
+    }
 }
  
 

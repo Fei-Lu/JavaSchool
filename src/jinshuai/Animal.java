@@ -16,4 +16,5 @@ public class Animal {
     public void testInstanceMethod(){
                      System.out.println("Animal中的实例方法");
               }
+    
 }

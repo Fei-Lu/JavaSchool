@@ -13,7 +13,7 @@ public class AnnotationExampleSub extends AnnotationExample {
     
     public AnnotationExampleSub () {
         
-        
+        String a;
     }
     
     @Override

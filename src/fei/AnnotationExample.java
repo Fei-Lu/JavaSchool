@@ -53,9 +53,9 @@ public class AnnotationExample implements AnnotationInferface {
     public void setValueOld3 (int a) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   
-}
 
+    }
+   
 /**
  *
  * @author feilu

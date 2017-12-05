@@ -13,7 +13,12 @@ public class Entrance {
     
     public Entrance () {
         //this.ClassAndObjects();
-        this.annotation();
+        //this.annotation();
+        this.inheritance();
+    }
+    
+    public void inheritance () {
+        new InheritanceExample();
     }
     
     public void annotation () {

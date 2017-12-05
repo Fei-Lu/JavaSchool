@@ -14,6 +14,8 @@ import jinshuai.MyAnnotation.Apple;
  * @author 靳帅
  */
 public class Breeding {
+    String a;
+    
     public void Breeding(){
         Breeding e=new Breeding(){
     

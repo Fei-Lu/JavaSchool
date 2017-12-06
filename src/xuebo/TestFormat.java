@@ -15,17 +15,17 @@ import java.util.Locale;
  */
 public class TestFormat {
     public static void test(){
-        outputValue();
-        outputCompare();
-        outputEquals();
-        outputValueOf();
-        outputParseInt();
-        outputToString();
-        outputFormat();
-        outputMathFormat();
-        outputCalendar();
-        outputDecimalFormat(); 
-        outputBasicMath();
+//        outputValue();
+//        outputCompare();
+//        outputEquals();
+//        outputValueOf();
+//        outputParseInt();
+//        outputToString();
+//        outputFormat();
+//        outputMathFormat();
+//        outputCalendar();
+//        outputDecimalFormat(); 
+//        outputBasicMath();
         outputExponential();
         outputTrigonometric();
         outputToString2();
@@ -172,9 +172,9 @@ class NameDome {
     public NameDome(String name) {
        this.name = name;
     }
-//    public String toString() {
-//       return "I'm a rabbit and my name is " + name;
-//    }
+    public String toString() {
+       return "I'm a rabbit and my name is " + name;
+    }
 }
 class Number extends NameDome {
         private int subNumber;

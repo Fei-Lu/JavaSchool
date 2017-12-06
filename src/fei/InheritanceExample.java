@@ -37,8 +37,13 @@ public class InheritanceExample {
     void staticOverrideTest () {
         Cat myCat = new Cat();
         Animal myAnimal = myCat;
+       if( myAnimal == myCat){
+           System.out.println("myAnimal");
+       }
+       
         Animal.testClassMethod();
-        myAnimal.testInstanceMethod();
+        Cat.testClassMethod();
+        myCat.testInstanceMethod();
     }
     
     void castTest () {
@@ -46,7 +51,9 @@ public class InheritanceExample {
         Object obj = (Object)b;
         
         //runtime error
-        //MountainBike mb = (MountainBike) obj;
+//        MountainBike mb  = (MountainBike)b;
+//        int a = 3;
+//        double c = (double)a;
         
         if (obj instanceof MountainBike) {
             System.out.println("Yes, MountainBike");
@@ -109,6 +116,7 @@ class Animal {
 }
 
 class Cat extends Animal {
+    
     public static void testClassMethod() {
         System.out.println("The static method in Cat");
     }

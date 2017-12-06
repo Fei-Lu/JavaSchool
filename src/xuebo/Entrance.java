@@ -19,7 +19,7 @@ public class Entrance{
         this.Objects();
     }
     public void Objects () {
-         PersonDemo.tests();
+         TestFormat.test();
     }
     public static void main(String[] args){
 //        //Hello World
@@ -49,13 +49,13 @@ public class Entrance{
 //        
 //           //JavaFx
 //           launch(args);
-////        new Entrance ();
+           new Entrance ();
 //            SubClass sc = new SubClass();
 //            SubClass sc2 = new SubClass(200);
 ////            Inheritance
 //            Animal b = new Dog();
 //            b.move();
            //VirtualDemo
-           new VirtualDemo();
+//           new VirtualDemo();
     }   
 }

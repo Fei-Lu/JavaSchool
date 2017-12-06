@@ -10,5 +10,8 @@ package chenxiao;
  * @author cauxu
  */
 public class PineTree extends Tree{
+    public PineTree(int startHeight){
+        super(startHeight);
+    }
     public static String type="Gymnosperm";
 }

@@ -9,11 +9,12 @@ package chenxiao;
  *
  * @author cauxu
  */
-public class TreeTestDemo {
-    public static void main(String[] args){
-        PineTree Pt=new PineTree(34);
-        AppleTree At=new AppleTree(23,"green");
-        System.out.println(PineTree.type);
-        Pt.photosynthesis(24,40);
+public class Animal {
+    public static void testClassMethod() {
+        System.out.println("The static method in Animal");
+    }
+    public void testInstanceMethod() {
+        System.out.println("The instance method in Animal");
     }
 }
+

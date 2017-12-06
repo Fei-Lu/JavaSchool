@@ -11,6 +11,9 @@ package chenxiao;
  */
 public class Tree {
     private int height;
+    public Tree(int startHeight){
+        height=startHeight;
+    }
     public int photosynthesis(int CO2,int H2O){
         int O2=H2O/2;
         int Carbohydrate=CO2;

@@ -14,7 +14,7 @@ package xujun;
 
 public class FPAdder {
     public static void main(String[] args) {
-
+        
 	int numArgs = args.length;
 
 	//this program requires at least two arguments on the command line

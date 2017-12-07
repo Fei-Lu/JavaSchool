@@ -19,7 +19,8 @@ public class Entrance{
         this.Objects();
     }
     public void Objects () {
-         TestFormat.test();
+//         TestFormat.test();
+           StringDemo.test();
     }
     public static void main(String[] args){
 //        //Hello World

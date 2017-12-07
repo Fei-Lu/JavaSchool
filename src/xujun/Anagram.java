@@ -15,18 +15,18 @@ public class Anagram {
     public static boolean areAnagrams(String string1,
                                       String string2) {
 
-        String workingCopy1 = removeJunk(string1);//输出的为CosmoandLaine
-        String workingCopy2 = removeJunk(string2);//输出的为Maidcleansoon
+        String workingCopy1 = removeJunk(string1);//输出的为eniaLdnaomsoC
+        String workingCopy2 = removeJunk(string2);//输出的为noosnaelcdiaM
 
-	    workingCopy1 = workingCopy1.toLowerCase();//cosmoandlaine
-	    workingCopy2 = workingCopy2.toLowerCase();//maidcleansoon
+	    workingCopy1 = workingCopy1.toLowerCase();//enialdnaomsoc
+	    workingCopy2 = workingCopy2.toLowerCase();//noosnaelcdiam
 
 	    workingCopy1 = sort(workingCopy1);
 	    workingCopy2 = sort(workingCopy2);
 
         return workingCopy1.equals(workingCopy2);
 /*bingo equals是对内容以及哈希值的比较 即所有的对象都拥有标识(内存地址)和状态(数据）
-  equals的默认输出是flase 重要的事情说三遍！！！（分析之后 将workingCopy2中的s改成m就可以看出来）
+  equals的默认输出是flase （分析之后 将workingCopy2中的s改成m就可以看出来）
   使用时的注意事项：
   1、自反性：对于任何非空引用值 x，x.equals(x) 都应返回 true。
 

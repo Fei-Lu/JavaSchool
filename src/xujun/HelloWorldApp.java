@@ -11,7 +11,12 @@ package xujun;
 import Yao.Tree;
 import Yao.PineApple;
 public class HelloWorldApp {
-    
+    public HelloWorldApp() {
+        this.Objects();
+        }
+        public void Objects () {
+           StringDemo.test();
+        }
     public static void main (String[] args) {
         
 //        int b = 2;
@@ -34,7 +39,7 @@ public class HelloWorldApp {
 //        System.out.println(p1==p2);
 //        System.out.println(p1.equals (p2));
 //      
-        BackWord d=new BackWord();
+       /* BackWord d=new BackWord();
         d.backOutPut("are you a shit");
         
 
@@ -47,6 +52,10 @@ public class HelloWorldApp {
         CaseInsensitiveString cis = new CaseInsensitiveString("");
         System.out.println();
         String s = "polish";
-        System.out.print(s);
-    }
+        System.out.print(s);*/
+       
+       new HelloWorldApp();
+    
+    
+    }   
 }

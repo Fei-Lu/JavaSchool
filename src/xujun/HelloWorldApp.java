@@ -17,7 +17,9 @@ public class HelloWorldApp {
         public void Objects () {
            StringDemo.test();
         }
-    public static void main (String[] args) {
+    public static void main (String[] args) {//主函数
+          System.out.println(args[0]);
+          
         
 //        int b = 2;
 //        byte c=127;

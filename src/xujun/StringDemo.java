@@ -28,10 +28,10 @@ public class StringDemo {
     public static void characterDemo(){
       System.out.println(Character.isLetter('c'));
       System.out.println(Character.isDigit('c'));
-      System.out.println(Character.isWhitespace('\n'));
+      System.out.println(Character.isWhitespace('\n'));//检查是不是空
       System.out.println( Character.isLowerCase('c'));
       System.out.println("She said \"Hello!\" to me.");
-      System.out.println("She said \nHello!%nto me.");
+      System.out.println("She said \nHello! %n to me.");
    }
     
     public static void buildAString(){
@@ -42,7 +42,7 @@ public class StringDemo {
       String helloString = new String(helloArray);
       System.out.println(helloString);
       
-      String s = new String("Hello!");
+      String s = new String("Hello!");//字符串池，重新建立对象，会占用另外的内存
       System.out.println(s);
      }
     public static void reverseString(){
@@ -73,12 +73,12 @@ public class StringDemo {
         System.out.println(charArray);
         
 
-        StringBuilder sb = new StringBuilder(a);    
-        sb.reverse();  // reverse it        
+        StringBuilder sb = new StringBuilder(a); //可直接调用reverse方法
+        sb.reverse();  // reverse it 
         System.out.println(sb);
      }
     public static void valueOfDemo(){
-        float[] args = new float[1];
+        char[] args = new char[1];
         if (args.length == 2) {
             // convert strings to numbers
             float a = (Float.valueOf(args[0])).floatValue(); //float a = Float.parseFloat(args[0]);
@@ -116,9 +116,9 @@ public class StringDemo {
         
         System.out.println(anotherPalindrome.indexOf('o'));
         System.out.println(anotherPalindrome.lastIndexOf('a'));
-        System.out.println(anotherPalindrome.replace('o', 'T'));
-        System.out.println(anotherPalindrome.replaceAll("ag", "oh"));
-        System.out.println(anotherPalindrome.replaceFirst("ag", "oh"));
+        System.out.println(anotherPalindrome.replace('o', 'T'));//仅能替换字符，不能替换字符串
+        System.out.println(anotherPalindrome.replaceAll("a", "o"));
+        System.out.println(anotherPalindrome.replaceFirst("a", "o"));
     }
 
     public static void regionMatchesDemo() {
@@ -142,7 +142,7 @@ public class StringDemo {
         int absVal = absoluteValue(i);
         System.out.println("absolute value of " + i + " = " + absVal);
 
-        List<Double> ld = new ArrayList<>();
+        ArrayList<Double> ld = new ArrayList<Double>();//list 里面只可以放object
         ld.add(3.1416);    // Π is autoboxed through method invocation.
         
         // 2. Unboxing through assignment

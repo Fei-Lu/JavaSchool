@@ -61,7 +61,7 @@ public class AnnotationTest {
         // 新建Person
         People person = new People();
         // 获取Person的Class实例
-        Class<Person> c = Person.class;
+        Class<People> c = People.class;
         // 获取 somebody() 方法的Method实例
         Method mSomebody = c.getMethod("somebody", new Class[]{String.class, int.class});
         // 执行该方法

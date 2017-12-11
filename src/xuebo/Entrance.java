@@ -20,7 +20,8 @@ public class Entrance{
     }
     public void Objects () {
 //         TestFormat.test();
-           StringDemo.test();
+//           StringDemo.test();
+             GenericDemo.test();
     }
     public static void main(String[] args){
 //        //Hello World

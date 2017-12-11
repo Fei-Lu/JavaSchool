@@ -14,7 +14,14 @@ public class Entrance {
     public Entrance () {
         //this.ClassAndObjects();
         //this.annotation();
-        this.inheritance();
+        //this.inheritance();
+        this.generics();
+    }
+    
+    public void generics () {
+        new GenericsExample ();
+        
+      
     }
     
     public void inheritance () {

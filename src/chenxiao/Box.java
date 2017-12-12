@@ -26,15 +26,16 @@ public class Box<T>{
     }
     
     //bounded type parameters
-    public <U extends Number> void inspect(U u){
+//    public <U extends Number> void inspect(U u){
+      public <U extends Number > void inspect(U u){
         System.out.println("T: " + t.getClass().getName());
         System.out.println("U: " + u.getClass().getName());
         
         System.out.println(u.intValue()% 2 == 0);
     }
     
-    public <T>List  add(T t1,T t2){
-        List<T> LI=new ArrayList<>();
+    public <T> List  add(T t1,T t2){
+        List<T> LI=new  ArrayList<>();
         LI.add(t1);
         LI.add(t2);        
         return LI;
@@ -72,11 +73,11 @@ class OrderedPair<K, V> implements Pair<K, V> {
 
 class NaturalNumber {
 
-    private final int i;
+     int i;
 
     public NaturalNumber(int i) { this.i = i; }
     // ...
-}
+    }
 class EvenNumber extends NaturalNumber {
 
     public EvenNumber(int i) { super(i); }

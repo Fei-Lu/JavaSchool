@@ -96,7 +96,7 @@ public class HelloWorldDemo {
             list.add(i);
         }
     }
-    
+
     //Wildcard Capture and Helper Methods
 public class WildcardError {
     /*void foo(List<?> i) { 
@@ -130,11 +130,6 @@ public class WildcardError {
                 ++count;
          return count;
     }
-    
-}
-
-interface Comparable<T> {
-    public int compareTo(T o);
 }
 
 

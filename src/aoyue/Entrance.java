@@ -20,7 +20,8 @@ public class Entrance {
     }
     public void Numbers () {
 //        new NumbersExample();
-        new StringExample ();
+//        new StringExample ();
+          new GenericAoyue ();
     }
     
     public static void main (String[] args) {

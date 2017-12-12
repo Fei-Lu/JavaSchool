@@ -5,6 +5,9 @@
  */
 package fei;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author feilu
@@ -12,11 +15,145 @@ package fei;
 public class GenericsExample {
     
     public GenericsExample () {
-        this.basicTest();
-        this.rawTypeTest();
-        this.genericMethodTest();
-        this.boundedTypeTest();
-        this.typeInferenceTest();
+//        this.basicTest();
+//        this.rawTypeTest();
+//        this.genericMethodTest();
+//        this.boundedTypeTest();
+//        this.typeInferenceTest();
+//        this.wildcardTest();
+//        this.wildcardCaptureTest();
+//        this.typeErasureTest();
+        this.bridgeMethodErrorTest();
+    }
+    
+    
+    
+    public void bridgeMethodErrorTest () {
+        
+        class Node<T> {
+
+            public T data;
+
+            public Node(T data) { this.data = data; }
+
+            public void setData(T data) {
+                System.out.println("Node.setData");
+                this.data = data;
+            }
+        }
+
+        class MyNode extends Node<Integer> {
+            public MyNode(Integer data) { super(data); }
+            
+            @Override
+            public void setData(Integer data) {
+                System.out.println("MyNode.setData");
+                super.setData(data);
+            }
+        }
+        
+        MyNode mn = new MyNode(5);
+        Node n = mn;            // A raw type - compiler throws an unchecked warning
+        n.setData("Hello");     
+        Integer x = mn.data; 
+
+        
+    }
+    
+    public void typeErasureTest () {
+        class Node<T> {
+
+            private T data;
+            private Node<T> next;
+
+            public Node(T data, Node<T> next) {
+                this.data = data;
+                this.next = next;
+            }
+
+            public T getData() { return data; }
+            // ...
+        }
+        class Nodee {
+
+            private Object data;
+            private Nodee next;
+
+            public Nodee(Object data, Nodee next) {
+                this.data = data;
+                this.next = next;
+            }
+
+            public Object getData() { return data; }
+            // ...
+        }
+        class Nodet<T extends Comparable<T>> {
+
+            private T data;
+            private Nodet<T> next;
+
+            public Nodet(T data, Nodet<T> next) {
+                this.data = data;
+                this.next = next;
+            }
+
+            public T getData() { return data; }
+            // ...
+        }
+        class Nodec {
+
+            private Comparable data;
+            private Nodec next;
+
+            public Nodec(Comparable data, Nodec next) {
+                this.data = data;
+                this.next = next;
+            }
+
+            public Comparable getData() { return data; }
+            // ...
+        }
+    }
+    
+    public void wildcardCaptureTest () {
+        class WildcardError {
+
+            void foo(List<?> i) {
+                //i.set(0, i.get(0)); //error, can not cast ? to foo
+            }
+        }
+        
+        class WildcardFixed {
+
+            void foo(List<?> i) {
+                fooHelper(i);
+            }
+
+
+            // Helper method created so that the wildcard can be captured
+            // through type inference.
+            private <T> void fooHelper(List<T> l) {
+                l.set(0, l.get(0));
+            }
+
+        }
+    }
+    
+    public void wildcardTest () {
+        List<Number> nList = new ArrayList();
+        List<? extends Number> wList = new ArrayList();
+        List<Integer> iList = new ArrayList();
+
+        //iList = wList; //error, because uncertain assigned to certain
+        wList = iList;
+        //nList = wList; //error, because uncertain assigned to certain
+        wList = nList;
+        
+        //wList.add(new Integer(3)); //error. read only
+        nList.add(new Integer(3)); //subtype
+        
+        //iList = nList; //error, no relationship
+        //nList = iList; //error, no relationship
         
     }
     

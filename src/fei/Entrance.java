@@ -20,8 +20,6 @@ public class Entrance {
     
     public void generics () {
         new GenericsExample ();
-        
-      
     }
     
     public void inheritance () {

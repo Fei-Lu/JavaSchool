@@ -16,25 +16,25 @@ import java.util.List;
 public class GenericAoyue {
 
     public GenericAoyue() {
-        this.HeapPollutionExample (); 
+//        this.HeapPollutionExample (); 
         
     }
-
-    public void HeapPollutionExample() {
-        List<String> stringListA = new ArrayList<String>();
-        List<String> stringListB = new ArrayList<String>();
-
-        ArrayBuilder.addToList(stringListA, "Seven", "Eight", "Nine");
-        ArrayBuilder.addToList(stringListB, "Ten", "Eleven", "Twelve");
-        List<List<String>> listOfStringLists =
-          new ArrayList<List<String>>();
-        ArrayBuilder.addToList(listOfStringLists,
-          stringListA, stringListB);
-
-        ArrayBuilder.faultyMethod(Arrays.asList("Hello!"), Arrays.asList("World!"));
-       
-    }
-        
+//
+//    public void HeapPollutionExample() {
+//        List<String> stringListA = new ArrayList<String>();
+//        List<String> stringListB = new ArrayList<String>();
+//
+//        ArrayBuilder.addToList(stringListA, "Seven", "Eight", "Nine");
+//        ArrayBuilder.addToList(stringListB, "Ten", "Eleven", "Twelve");
+//        List<List<String>> listOfStringLists =
+//          new ArrayList<List<String>>();
+//        ArrayBuilder.addToList(listOfStringLists,
+//          stringListA, stringListB);
+//
+//        ArrayBuilder.faultyMethod(Arrays.asList("Hello!"), Arrays.asList("World!"));
+//       
+//    }
+//        
         
         
         
@@ -99,42 +99,42 @@ public class GenericAoyue {
 
 // Counts the number of occurrences of elem in anArray.
 //
-public static <T> int count(T[] anArray, T elem) {
-    int cnt = 0;
-    for (T e : anArray)
-        if (e.equals(elem))
-            ++cnt;
-        return cnt;
-}
+//public static <T> int count(T[] anArray, T elem) {
+//    int cnt = 0;
+//    for (T e : anArray)
+//        if (e.equals(elem))
+//            ++cnt;
+//        return cnt;
+//}
+//
+//
+//public static int count(Object[] anArray, Object elem) {
+//    int cnt = 0;
+//    for (Object e : anArray)
+//        if (e.equals(elem))
+//            ++cnt;
+//        return cnt;
+//}
+//
+//
+//public static <T extends Shape> void draw(T shape) { /* ... */ }
+//
+//
+//public static void draw(Shape shape) { /* ... */ }
 
 
-public static int count(Object[] anArray, Object elem) {
-    int cnt = 0;
-    for (Object e : anArray)
-        if (e.equals(elem))
-            ++cnt;
-        return cnt;
-}
-
-
-public static <T extends Shape> void draw(T shape) { /* ... */ }
-
-
-public static void draw(Shape shape) { /* ... */ }
-
-
-class ArrayBuilder {
-    public static <T> void addToList (List<T> listArg, T... elements) {
-    for (T x : elements) {
-      listArg.add(x);
-    }
-    public static void faultyMethod(List<String>... l) {
-      Object[] objectArray = l;     // Valid
-      objectArray[0] = Arrays.asList(42);
-      String s = l[0].get(0);       // ClassCastException thrown here
-  }
-}
-
+//class ArrayBuilder {
+//    public static <T> void addToList (List<T> listArg, T... elements) {
+//    for (T x : elements) {
+//      listArg.add(x);
+//    }
+////    public static void faultyMethod(List<String>... l) {
+////      Object[] objectArray = l;     // Valid
+////      objectArray[0] = Arrays.asList(42);
+////      String s = l[0].get(0);       // ClassCastException thrown here
+////  }
+//}
+//
 
 
 

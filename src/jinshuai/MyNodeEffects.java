@@ -22,7 +22,8 @@ public class MyNodeEffects extends NodeEffects<Integer> {
      public static void main(String[] args)
               {
                 MyNodeEffects mn = new MyNodeEffects(5);  
-                NodeEffects n = mn;         
+                NodeEffects n = mn;   
+                mn.data.intValue();
                 n.setData("Hello");       // 会引发抛出ClassCastException
                 Integer x = mn.data;    
               }
@@ -90,7 +91,7 @@ class Pair<K, V> {
 
 
 //Cannot Declare Static Fields Whose Types are Type Parameters
- class MobileDevice<T> {
+// class MobileDevice<T> {
 //    private static T os;
 
     // ...
@@ -107,7 +108,7 @@ class Pair<K, V> {
 //        // ...
 //    }
 //}
- }
+ 
 
 
 //Cannot Create Arrays of Parameterized Types
@@ -115,7 +116,7 @@ class Pair<K, V> {
 //Object[] strings = new String[2];
 //strings[0] = "hi";   // OK
 //strings[1] = 100;    // An ArrayStoreException is thrown.
-
+// }
 
 //Cannot Create, Catch, or Throw Objects of Parameterized Types
 // Extends Throwable indirectly

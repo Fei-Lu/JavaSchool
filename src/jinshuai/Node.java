@@ -93,8 +93,9 @@ public static int count(Object[] anArray, Object elem) {
 
 
 
-/* class Pair<T>{  
-      public boolean equals(T value){  
-            return (first.equals(value));  
-      }  
-} */
+//class Pair2<T>{ 
+//    void first();
+//      public boolean a(T value){  
+//            return (first.equals(value));  
+//      }  
+//}

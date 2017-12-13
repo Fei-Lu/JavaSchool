@@ -15,7 +15,12 @@ public class Entrance {
         //this.ClassAndObjects();
         //this.annotation();
         //this.inheritance();
-        this.generics();
+        //this.generics();
+        this.exception();
+    }
+    
+    public void exception () {
+        new chainedException();
     }
     
     public void generics () {

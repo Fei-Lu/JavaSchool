@@ -20,7 +20,7 @@ public class Entrance {
     }
     
     public void exception () {
-        new chainedException();
+        new ExceptionExample();
     }
     
     public void generics () {

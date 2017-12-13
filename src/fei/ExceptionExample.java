@@ -23,9 +23,9 @@ import java.util.logging.Logger;
  *
  * @author feilu
  */
-public class chainedException {
+public class ExceptionExample {
     
-    public chainedException () {
+    public ExceptionExample () {
         //this.checkedAndUncheckedtest();
         //this.standardFormattest();
         //catchErrorTest();

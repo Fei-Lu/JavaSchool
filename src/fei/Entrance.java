@@ -16,7 +16,12 @@ public class Entrance {
         //this.annotation();
         //this.inheritance();
         //this.generics();
-        this.exception();
+//        this.exception();
+        this.io();
+    }
+    
+    public void io () {
+        new IOExample();
     }
     
     public void exception () {

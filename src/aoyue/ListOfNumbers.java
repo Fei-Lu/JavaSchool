@@ -17,11 +17,11 @@ import static javafx.beans.binding.Bindings.and;
  * @author Aoyue
  */
 class ListOfNumbers {
-    private List<Integer> list;
+    private final List<Integer> list;
     private static final int SIZE = 10;
 
     public ListOfNumbers () {
-        list = new ArrayList<Integer>(SIZE);
+        list = new ArrayList<>(SIZE);
         for (int i = 0; i < SIZE; i++) {
             list.add(new Integer(i));
         }
@@ -42,14 +42,14 @@ class ListOfNumbers {
         System.out.println("Entered try statement");
         out = new PrintWriter(new FileWriter("OutFile.txt"));
         for (int i = 0; i < SIZE; i++) {
-            out.println("Value at: " + i + " = " + list.get(i));
+            out.println("Value at: " + i + " = " + list.get(15));
         }
     }
     catch (IndexOutOfBoundsException e) {
     System.err.println("IndexOutOfBoundsException: " + e.getMessage());
-} catch (IOException e) {
+    } catch (IOException e) {
     System.err.println("Caught IOException: " + e.getMessage());
-}
+    }
     
     //catching 可以用一个异常处理来同时处理多个异常类型，catch参数默认为final，在ex中，其为final类型
    /* catch (IOException|SQLException ex) {
@@ -64,8 +64,9 @@ class ListOfNumbers {
         System.out.println("PrintWriter not open");
     } 
 } 
-    
+    System.out.println("keep going"); 
  }
+   
      public static void main(String[] args) {  
         ListOfNumbers listOfNumbers1 = new ListOfNumbers();  
         try {  

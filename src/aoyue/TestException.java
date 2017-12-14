@@ -17,6 +17,7 @@ public class TestException {
         boolean ret = true;  
         try {  
             ret = testEx1();  
+            System.out.println(ret);
         } catch (Exception e) {  
             System.out.println("testEx, catch exception");  
             ret = false;  
@@ -32,17 +33,21 @@ public class TestException {
         try {  
             ret = testEx2();  
             if (!ret) {  
-                return false;  
+                return true;  
+                
             }  
             System.out.println("testEx1, at the end of try");  
             return ret;  
         } catch (Exception e) {  
             System.out.println("testEx1, catch exception");  
             ret = false;  
+            e.printStackTrace();
             throw e;  
         } finally {  
+            System.out.println(ret);
             System.out.println("testEx1, finally; return value=" + ret);  
-            return ret;  
+            //return true; 
+            //System.out.println(ret);
         }  
     }  
   
@@ -55,8 +60,10 @@ public class TestException {
                 c = b / i;  
                 System.out.println("i=" + i);  
             }  
+
             return true;  
         } catch (Exception e) {  
+            
             System.out.println("testEx2, catch exception");  
             ret = false;  
             throw e;  

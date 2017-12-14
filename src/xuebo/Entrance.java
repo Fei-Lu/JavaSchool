@@ -7,6 +7,7 @@ package xuebo;
 
 //import java.io.BufferedWriter;
 
+import java.io.IOException;
 import static javafx.application.Application.launch;
 
 
@@ -15,15 +16,16 @@ import static javafx.application.Application.launch;
  * @author xuebo
  */
 public class Entrance{
-    public Entrance () {
+    public Entrance () throws IOException {
         this.Objects();
     }
-    public void Objects () {
+    public void Objects () throws IOException {
 //         TestFormat.test();
 //           StringDemo.test();
-             GenericDemo.test();
+//             GenericDemo.test();
+                BasicIoDemo.test();
     }
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
 //        //Hello World
 ////      System.out.println("Hello World!");
 //        //Bicycle

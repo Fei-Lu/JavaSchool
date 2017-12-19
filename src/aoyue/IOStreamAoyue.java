@@ -31,7 +31,7 @@ public class IOStreamAoyue {
 //        this.CopyCharacters();
 //        this.CopyLines ();
 //        this.ScanXan ();
-        //this. ScanSum();
+        this. ScanSum();;
 //        this.Root ();
 //        this.Root2 ();
 //        this.Password ();

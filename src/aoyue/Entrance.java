@@ -7,6 +7,8 @@ package aoyue;
 
 import static aoyue.DecimalFormatDemo.customFormat;
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -16,17 +18,34 @@ import java.util.Locale;
 public class Entrance {
     
     public Entrance () {
-        this.Numbers();    
+//        this.numbers();  
+//        this.string();
+//        this.generic();
+//        this.listOfNumbers();
+        this.collection();
     }
-    public void Numbers () {
-//        new NumbersExample();
-//        new StringExample ();
-          new GenericAoyue ();
+    public void numbers () {
+        new NumbersExample();
     }
-    
+    public void string() {
+        new StringExample();
+        
+    }
+      
+    public void generic() {
+        new GenericAoyue ();
+    }
+    public void listOfNumbers() {
+        new ListOfNumbers ();
+    }
+      public void collection() {
+        new Collection ();
+    }
     public static void main (String[] args) {
         new Entrance ();
-        
+
+
+       
 //        /*************************class TestFormat************************************/
 //        long n = 461012;
 //      System.out.format("%d%n", n);      //  -->  "461012"
@@ -147,5 +166,4 @@ public class Entrance {
 //            myApp.operateBinary(20, 10, subtraction));
         
     }
-
 }

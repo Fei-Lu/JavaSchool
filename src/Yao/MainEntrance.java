@@ -5,12 +5,14 @@
  */
 package Yao;
 
+import java.io.IOException;
+import java.util.*;
 /**
  *
  * @author yaozhou
  */
 public class MainEntrance {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, InterruptedException{
 //        Card card1 = new Card(12,1);
 //        
 //        System.out.println("hello2");
@@ -30,11 +32,19 @@ public class MainEntrance {
 //          String d = aa.getBackwardSequence();
 //          System.out.println(aa.getBackwardSequence()) ;
 //          
-        new Thread(new Runnable(){
-            public void run() {
-                System.out.println("Ano class");
-            }
-        }).start();
-        new Thread ( () -> System.out.println("lamda expression")).start();
+//        new Thread(new Runnable(){
+//            public void run() {
+//                System.out.println("Ano class");
+//            }
+//        }).start();
+//        new Thread ( () -> System.out.println("lamda expression")).start();
+//        new CopyBytes();
+
+//    SubClass sc = new SubClass();
+//    SubClass sc2 = new SubClass(200); 
+//  
+        new InterfaceDemo();
+        
     }
+
 }

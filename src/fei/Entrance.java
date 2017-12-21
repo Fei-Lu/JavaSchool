@@ -17,7 +17,12 @@ public class Entrance {
         //this.inheritance();
         //this.generics();
 //        this.exception();
-        this.io();
+//        this.io();
+        this.collection();
+    }
+    
+    public void collection () {
+        new CollectionExample();
     }
     
     public void io () {

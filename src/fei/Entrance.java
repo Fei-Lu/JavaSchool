@@ -18,7 +18,7 @@ public class Entrance {
         //this.generics();
 //        this.exception();
 //        this.io();
-        this.collection();
+        //this.collection();
     }
     
     public void collection () {

@@ -16,8 +16,8 @@ public class Entrance {
         //this.annotation();
         //this.inheritance();
         //this.generics();
-//        this.exception();
-//        this.io();
+//      this.exception();
+//      this.io();
         //this.collection();
     }
     

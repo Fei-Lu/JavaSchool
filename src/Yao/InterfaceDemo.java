@@ -122,7 +122,7 @@ public class InterfaceDemo {
     public void testList(){
         int numHands = 2;
         int cardsPerHand = 3;
-         String[] suit = new String[] {
+        String[] suit = new String[] {
             "spades", "hearts", 
             "diamonds", "clubs" 
         };
@@ -157,7 +157,7 @@ public class InterfaceDemo {
         System.out.println("\n");
         for (int i = 0; i < numHands; i++)
             System.out.println(dealHand(deck, cardsPerHand));
-        
+            
         // index of
         int a = deck.indexOf("8 of spades");
         int b = deck.indexOf("8");
@@ -203,7 +203,7 @@ public class InterfaceDemo {
         //访问、并删除队列的最后一个元素
         System.out.println(books.pollLast());
         //下面输出将看到队列中只剩下中间一个元素：
-        //轻量级Java EE企业应用实战
+        //
         System.out.println(books);
     }
  
@@ -219,7 +219,7 @@ public class InterfaceDemo {
 //            Thread.sleep(1000);
         }
         
-         PriorityQueue pq = new PriorityQueue();
+        PriorityQueue pq = new PriorityQueue();
         //下面代码依次向pq中加入四个元素
         pq.offer(6);
         pq.offer(-3);

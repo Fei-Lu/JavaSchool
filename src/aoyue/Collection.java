@@ -85,8 +85,10 @@ public class Collection {
     public void basicOperations () {
       Map<String,String> map=new HashMap<String,String>();
         //method put 
-        map.put("01", "jinshuai");
+        map.put("01", "jinshuai");//将value值赋给key put返回previous的值
         System.out.println(map.put("01", "chenxiao002"));
+//        map.remove("01");
+        System.out.println(map);
         map.put("02", "xujun003");
         map.put("03", "xuebo004");
         map.put(null, "yyyy");
@@ -106,10 +108,10 @@ public class Collection {
     }
     public void freq() {
       //map实现类型 HashMap  TreeMap  LinkedHashMap  分别用这3种实现，来看最终输出结果。
-         Map<String, Integer> m = new LinkedHashMap<String, Integer>();
+         Map<String, Integer> m = new TreeMap<String, Integer>();
  
         // Initialize frequency table from command line
-        String[] args = {"if","it","is","to","be","it","is","up","to","me","to","delegate"};
+        String[] args = {"if","it","is","to","be","it","is","up","to","me","delegate"};
         for (String a : args) {
             Integer freq = m.get(a);
             m.put(a, (freq == null) ? 1 : freq + 1);
@@ -117,6 +119,7 @@ public class Collection {
  
         System.out.println(m.size() + " distinct words:");
         System.out.println(m);
+        System.out.println("up".hashCode());
     }
     
     public void collectionView () {

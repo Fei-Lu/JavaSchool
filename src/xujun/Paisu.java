@@ -27,12 +27,12 @@ public void toBinary(int i){
     private void trans(int i, int i0, int i1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-public class jianJi{
+/*public class jianJi{
    public void main(String args[]){
    int i=8;
    toBinary(i);
 }
-}
+}*/
 }
  
 

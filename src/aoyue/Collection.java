@@ -123,7 +123,7 @@ public class Collection {
     }
     
     public void collectionView () {
-        Map m = new HashMap();
+        Map<Integer, String> m = new HashMap();
         //method put  将指定的值与此映射中的指定键关联
         m.put(1, "jack");
         m.put(2, "rose");
@@ -131,13 +131,17 @@ public class Collection {
         
         System.out.println(m);
         //method entrySet 
-        Set s = m.entrySet();
+        Set<Map.Entry<Integer, String>> s = m.entrySet();
+        for (Map.Entry<Integer, String> e : s) {
+            e.getKey();
+            e.getValue();
+        }
         System.out.println(s);
         //method keySet
-        s = m.keySet();
-        System.out.println(s);
+        Set<Integer> ss = m.keySet();
+        System.out.println(ss);
 
-        for (Object key : s) {
+        for (Object key : ss) {
             System.out.println(key);
             System.out.println(m.get(key));
         }
@@ -157,14 +161,13 @@ public class Collection {
         //1.通过keySet得到Map集合多有key的Set集合
         //2.调用Set的Iterator方法，此时每个Iterator对象是key值
         //3.通过Map的getValue(key)得到value值
-        Iterator it = s.iterator();
-        s = m.keySet();//得到的是key的集合
-        it = s.iterator();//然后将key迭代出来
+        Iterator it = ss.iterator();
+        ss = m.keySet();//得到的是key的集合
+        it = ss.iterator();//然后将key迭代出来
         while(it.hasNext()){
             int i = (int)it.next();
             System.out.println(i+"   "+m.get(i));
         }
-
 
     }
     

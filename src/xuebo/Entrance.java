@@ -23,7 +23,8 @@ public class Entrance{
 //         TestFormat.test();
 //           StringDemo.test();
 //             GenericDemo.test();
-                BasicIoDemo.test();
+//                BasicIoDemo.test();
+                SortedSetAndMap.test();
     }
     public static void main(String[] args) throws IOException{
 //        //Hello World

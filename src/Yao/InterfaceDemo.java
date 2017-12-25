@@ -46,12 +46,12 @@ public class InterfaceDemo {
     String[] c1 = {"green","red","yellow","red"};
     String[] c2 = {"yellow","blue"}; 
     public InterfaceDemo() throws InterruptedException{
-       testTraverse();
-       testSet();
-       testList();
-       testQueue();
-       testDeque();
-       testMap();
+//       testTraverse();
+//       testSet();
+//       testList();
+//       testQueue();
+//       testDeque();
+//       testMap();
        testOrdering();
        testSortedSet();
        testSortedMap();
@@ -327,6 +327,9 @@ public class InterfaceDemo {
             System.out.println(key + "------>" + scores.get(key));
         }
     }
+    
+    
+    
     public static <E> List<E> dealHand(List<E> deck, int n) {
         int deckSize = deck.size();
         List<E> handView = deck.subList(deckSize - n, deckSize);

@@ -38,7 +38,7 @@ public class Name implements Comparable<Name> {//The Name interface represents a
 
     public int compareTo(Name n) {
         int lastCmp = lastName.compareTo(n.lastName);
-        return (lastCmp != 0 ? lastCmp : firstName.compareTo(n.firstName));
+        return (lastCmp != 0 ? -lastCmp : -firstName.compareTo(n.firstName));
     }
     
     static final Comparator<Employee> SENIORITY_ORDER = new Comparator<Employee>() {
@@ -76,10 +76,11 @@ public class Name implements Comparable<Name> {//The Name interface represents a
     }
 //2.冒泡排序    
     public static void bubbleSort(int[] arr){
+         int temp=0;
          for(int x=0;x<arr.length-1;x++){
             for(int y=0;y<arr.length-1-x;y++){
                 if(arr[y]>arr[y+1]){    
-                   int temp=arr[y];
+                   temp=arr[y];
                    arr[y]=arr[y+1];
                    arr[y+1]=temp;
      //              swap(arr,y,y+1);
@@ -89,7 +90,7 @@ public class Name implements Comparable<Name> {//The Name interface represents a
     }
     public static void printArray(int[] arr){
         System.out.print("[");
-        for(int x=0;x<arr.length-1;x++){
+        for(int x=0;x<arr.length;x++){
             System.out.print(arr[x]+",");
         }
         System.out.println("]");
@@ -279,10 +280,10 @@ public class Name implements Comparable<Name> {//The Name interface represents a
         Name newname2=new Name("xiao","zhu");
         int aa=newname1.compareTo(newname2);
         System.out.println(aa);
-        System.out.println();
+        System.out.println(); 
         
         List<Employee> e = new ArrayList<Employee>();
-        Collections.sort(e, SENIORITY_ORDER);//Sorts the specified list according to the order induced by the specified comparator
+        Collections.sort(e, SENIORITY_ORDER);//Sorts the specified list according to the order induced by the specified comparator  //静态方法
         System.out.println(e);
         System.out.println();
          
@@ -299,13 +300,13 @@ public class Name implements Comparable<Name> {//The Name interface represents a
         System.out.print("冒泡排序后：");
         printArray(abb);
         System.out.println();
-        
+        //它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。
         printArray(abb);
         quick(abb);
         System.out.print("快速排序后：");
         printArray(abb);
         System.out.println();
-        
+        //通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
         int[]c={69,789,4561,2335,789521,456479799,52879244};
         printArray(c);
         insertSort(c);        
@@ -313,14 +314,16 @@ public class Name implements Comparable<Name> {//The Name interface represents a
         printArray(c);
         shellSort(c);
         printArray(c);
-        
+        //它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
+        //插入排序在实现上，通常采用in-place排序（即只需用到 {\displaystyle O(1)} {\displaystyle O(1)}的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间
         int[] d={12,45,56,1,24,5,7};
         printArray(d);
         shellSort(d);
         System.out.print("希尔排序后：");
         printArray(d);
         System.out.println();
-        
+        //该算法由1959年公布，是插入排序的一种更高效的改进版本。
+        //它的作法不是每次一个元素挨一个元素的比较。而是初期选用大跨步（增量较大）间隔比较，使记录跳跃式接近它的排序位置；然后增量缩小；最后增量为1 ，这样记录移动次数大大减少，
         int[] a={49,38,65,97,76,13,27,49,78,34,12,64};  
         //循环建堆  
         for(int i=0;i<a.length-1;i++){  

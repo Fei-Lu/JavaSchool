@@ -5,14 +5,22 @@
  */
 package xuebo;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.SortedMap;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
  *
- * @author yaozhou
+ * @author xuebo
  */
 public interface SortedSetAndMap {
     
@@ -20,15 +28,19 @@ public interface SortedSetAndMap {
         
         outputHashSet();
         outputTreeSet();
+        
         outputSortedSet();
         outputSortedSet2();
+        outputSortedSet3();
         
+        outputSortedMap();
+        outputSortedMap2();
     }
    
     
     
     //Collection不能进行双向输出，Set接口与Collection接口定义一致，所以本身也不能双向输出。
-    //HashSet：使用散列的方式存放，本身没有顺序
+    //HashSet：使用散列的方式存放，本身没有顺序，无序指的是存取无序，不是储存数据无序
     public static void outputHashSet(){
         
         Set<String> allSet = new HashSet<String>() ;  
@@ -42,6 +54,8 @@ public interface SortedSetAndMap {
         allSet.add("D") ;   // add
         
         System.out.println(allSet) ;  
+        
+        System.out.println("**********************");
     }
     
     
@@ -57,19 +71,9 @@ public interface SortedSetAndMap {
             allSet.add("E") ;   
             
             System.out.println(allSet) ;  
-
-//            System.out.println(allSet.first());
-
-//            System.out.println(allSet.last());
-
-            //num < 4
-//            System.out.println(allSet.headSet(4));
-
-            //>=5
-//            System.out.println(allSet.tailSet(5));
-
-            //(-3,4]
-//            System.out.println(allSet.subSet(-3 , 4));
+            
+            System.out.println("**********************");
+            
     }
     
     
@@ -99,6 +103,8 @@ public interface SortedSetAndMap {
         System.out.println("tailSet元素：" + allSet.tailSet("C")) ;  
         
         System.out.println("subSet元素：" + allSet.subSet("B","D")) ;  
+        
+        System.out.println("**********************");
         
                 
     }
@@ -139,36 +145,88 @@ public interface SortedSetAndMap {
         for (char ch = 'A'; ch <= 'L'; ) {
         String from = String.valueOf(ch++);
         String to = String.valueOf(ch);
+        
         System.out.println(from + ": " + allSet.subSet(from, to).size());
+        
         }
+        System.out.println("**********************");
         
         
     }
     
-//    public void testSortedSet(){
-//
-//        TreeSet nums = new TreeSet();
-//        
-//        nums.add(5);
-//        nums.add(2);
-//        nums.add(10);
-//        nums.add(-9);
-//
-//        System.out.println(nums);
-//
-//        System.out.println(nums.first());
-//
-//        System.out.println(nums.last());
-//
-//        //num < 4
-//        System.out.println(nums.headSet(4));
-//
-//        //>=5
-//        System.out.println(nums.tailSet(5));
-//
-//        //(-3,4]
-//        System.out.println(nums.subSet(-3 , 4));         
-//    }
-//    
+    //SortedSet 排序状态   
+    //Comparator comparator（）返回当前Set使用的Comparator;或者返回null  
+    //SortedSet是按对象的比较函数对无素排序的  
+    public static void outputSortedSet3(){  
+        
+        SortedSet<String> sorted=new TreeSet<String>();  
+        Collections.addAll(sorted,"one two three four five six seven eight".split(" "));  
+        System.out.println(sorted);  
+        
+        String low=sorted.first();  
+        String high=sorted.last();  
+        System.out.println(low);  
+        System.out.println(high);  
+        Iterator<String> it=sorted.iterator();  
+        for(int i=0;i<=6;i++)  
+        {  
+            if(i==3)low=it.next();  
+            if(i==6) high=it.next();  
+            else  
+                it.next();  
+        }  
+        System.out.println(low);  
+        
+        System.out.println(high); 
+        
+        System.out.println(sorted.subSet(low,high));  
+        
+        System.out.println(sorted.headSet(high));//小于 ToElement元素的组成 
+        
+        System.out.println(sorted.tailSet(low));//大于等于  
+        
+        System.out.println("**********************");
+        System.out.println("**********************");
+    }  
     
+      public static void outputSortedMap(){  
+        HashMap<String,String> map=new HashMap<String, String>();    
+          map.put("3","55");    
+          map.put("2", "22");    
+          map.put("1", "33");    
+          for (Entry<String,String> entry: map.entrySet()) {    
+           System.out.println("排序之前:"+entry.getKey()+" 值"+entry.getValue());    
+               
+          }    
+          System.out.println("===============");    
+          SortedMap<String,String> sort=new TreeMap<String,String>(map);    
+          Set<Entry<String,String>> entry1=sort.entrySet();    
+          Iterator<Entry<String,String>> it=entry1.iterator();    
+          while(it.hasNext())    
+          {    
+           Entry<String,String> entry=it.next();    
+           System.out.println("排序之后:"+entry.getKey()+" 值"+entry.getValue());    
+          }   
+    }   
+      
+      
+    public static void outputSortedMap2() {  
+        Map<Double, String> map = new TreeMap<Double, String>(  
+                new Comparator<Double>() {  
+                    public int compare(Double obj1, Double obj2) {   
+                        return obj2.compareTo(obj1);  
+                    }  
+                });  
+                map.put(2.33, "ccccc");  
+                map.put(2.0, "aaaaa");  
+                map.put(3.0, "bbbbb");  
+                map.put(4.0, "ddddd");  
+          
+        Set<Double> keySet = map.keySet();  
+        Iterator<Double> iter = keySet.iterator();  
+        while (iter.hasNext()) {  
+            Double key = iter.next();  
+            System.out.println(key + ":" + map.get(key));  
+        }  
+    }  
 }

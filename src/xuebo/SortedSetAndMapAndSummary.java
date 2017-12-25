@@ -310,12 +310,12 @@ public interface SortedSetAndMapAndSummary {
    
     
      public static void outputSummary() {
-        String[] args = {"Consider the four core interfaces, Set, List, Queue, and Map. For each of the following four assignments"} ;
+        String[] args = {"aabbddeeffffffffff"} ;
         
         // Get and shuffle the list of arguments
         List<String> argList = Arrays.asList(args);
         Collections.shuffle(argList);
-
+        
         // Print out the elements using JDK 8 Streams
         argList.stream()
         .forEach(e->System.out.format("%s ",e));
@@ -331,7 +331,7 @@ public interface SortedSetAndMapAndSummary {
     
     public static void outputSummary2()  {
         
-        String[] args = {"Consider the four core interfaces, Set, List, Queue, and Map. For each of the following four assignments"} ;
+        String[] args = {"aabbddeeffffffffff"} ;
         Set<String> s = new HashSet<String>();
         
         for (String a : args)

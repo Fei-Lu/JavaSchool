@@ -54,9 +54,9 @@ public class LambdaExpression {
                 sb.append(st.charAt((int)(Math.random()*st.length()))).append(st.charAt((int)(Math.random()*st.length()))).append(st.charAt((int)(Math.random()*st.length()))).append(st.charAt((int)(Math.random()*st.length())));
                 String name=sb.toString();
                 int age=(int)Math.random()*50;
-                LocalDate birthday;
                 Person.Sex sex=Math.random()>0.5?Person.Sex.MALE:Person.Sex.FEMALE;
-                Person person=new Person(name,age,sex);
+                String email=name+"@genetics.ac.cn";
+                Person person=new Person(name,age,sex,email);
                 roster.add(person);
             }
             return roster;
@@ -130,10 +130,12 @@ class Person{
     String name;
     int age;
     Sex gender;
-    public Person(String name,int age,Sex gender){
+    String email;
+    public Person(String name,int age,Sex gender,String email){
         this.age=age;
         this.gender=gender;
         this.name=name;
+        this.email=email;
     }
     public int getAge(){
         return this.age;
@@ -144,8 +146,11 @@ class Person{
     public String getName(){
         return this.name;
     }
+    public String getEmail(){
+        return this.email;
+    }
     public void printPerson(){
-        System.out.println(this.name+" "+this.age+" "+this.gender);
+        System.out.println(this.name+" "+this.age+" "+this.gender+" "+this.email);
     }
 }
 
@@ -153,6 +158,7 @@ interface CheckPerson {
     boolean test(Person p);
 }
 class CheckPersonEligibleForSelectiveService implements CheckPerson {
+    @Override
     public boolean test(Person p) {
         return p.gender == Person.Sex.MALE &&
             p.getAge() >= 18 &&

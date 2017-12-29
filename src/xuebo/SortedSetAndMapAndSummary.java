@@ -155,7 +155,6 @@ public interface SortedSetAndMapAndSummary {
         for (char ch = 'A'; ch <= 'L'; ) {
         String from = String.valueOf(ch++);
         String to = String.valueOf(ch);
-        
         System.out.println(from + ": " + allSet.subSet(from, to).size());
         
         }
@@ -201,12 +200,13 @@ public interface SortedSetAndMapAndSummary {
     
       public static void outputSortedMap(){  
         HashMap<String,String> map=new HashMap<String, String>(); 
-        long a = System.nanoTime();
           map.put("3","55");    
           map.put("2", "22");
           map.put("1", "33");    
-          for (Entry<String,String> entry: map.entrySet()) {    
-          System.out.println("before:"+entry.getKey()+" Value"+entry.getValue());    
+          Set<Entry<String,String>> set1=map.entrySet();
+          long a = System.nanoTime();
+          for (Entry<String,String> entry: set1) {    
+          //System.out.println("before:"+entry.getKey()+" Value"+entry.getValue());    
               
           }
           long b = System.nanoTime();
@@ -214,14 +214,18 @@ public interface SortedSetAndMapAndSummary {
           
           System.out.println("===============");    
           SortedMap<String,String> sort=new TreeMap<String,String>(map); 
+          
+          Set<Entry<String,String>> entry1=sort.entrySet();   
           long c = System.nanoTime();
-          Set<Entry<String,String>> entry1=sort.entrySet();    
-          Iterator<Entry<String,String>> it=entry1.iterator();    
+          for(Entry<String,String> entry: entry1){
+              //System.out.println("after:"+entry.getKey()+" Value"+entry.getValue());
+          }
+          /*Iterator<Entry<String,String>> it=entry1.iterator();    
           while(it.hasNext())    
           {    
            Entry<String,String> entry=it.next();    
            System.out.println("after:"+entry.getKey()+" Value"+entry.getValue());    
-          } 
+          } */
           
           long d = System.nanoTime();
           System.out.println(d-c);
@@ -232,11 +236,12 @@ public interface SortedSetAndMapAndSummary {
       
     public static void outputSortedMap2() {  
         Map<Double, String> map = new TreeMap<Double, String>(  
-                new Comparator<Double>() {  
+                (Double obj1,Double obj2) -> obj2.compareTo(obj1)
+               /* new Comparator<Double>() {  
                     public int compare(Double obj1, Double obj2) {   
                         return obj2.compareTo(obj1);  
                     }  
-                });  
+                }*/);  
                 map.put(2.33, "ccccc");  
                 map.put(2.0, "aaaaa");  
                 map.put(3.0, "bbbbb");  

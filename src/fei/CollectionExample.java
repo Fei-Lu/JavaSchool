@@ -12,8 +12,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.function.IntConsumer;
 import java.util.stream.Collectors;
 
 /**
@@ -29,7 +31,101 @@ public class CollectionExample {
         //this.setTest();
         //this.listTest();
         //this.queueTest();
-        this.mapTest();
+        //this.mapTest();
+        this.aggregateOperation();
+    }
+    
+    public void aggregateOperation () {
+        List<Person> roster = personList;
+        double average = roster
+                        .stream()
+                        .filter(p -> p.getGender() == Person.Sex.MALE)
+                        .mapToInt(Person::getAge)
+                        .average()
+                        .getAsDouble();
+        System.out.println(average);
+        Integer totalAge = roster
+                        .stream()
+                        .mapToInt(Person::getAge)
+                        .sum();
+        System.out.println(totalAge);
+        Integer totalAgeReduce = roster
+                                .stream()
+                                .map(Person::getAge)
+                                .reduce(
+                                    0,
+                                    (a, b) -> a + b);
+        System.out.println(totalAgeReduce);
+        
+        class Averager implements IntConsumer
+        {
+            private int total = 0;
+            private int count = 0;
+            
+            public double average() {
+                return count > 0 ? ((double) total)/count : 0;
+            }
+
+            @Override
+            public void accept(int i) { 
+                total += i; 
+                count++; 
+            }
+            public void combine(Averager other) {
+                total += other.total;
+                count += other.count;
+            }
+        }
+//        Averager averageCollect = roster.stream()
+//                                        .filter(p -> p.getGender() == Person.Sex.MALE)
+//                                        .map(Person::getAge)
+//                                        .collect(Averager::new, Averager::accept, Averager::combine);
+//        System.out.println("Average age of male members: " + averageCollect.average());
+        List<String> namesOfMaleMembersCollect = roster
+                                                .stream()
+                                                .filter(p -> p.getGender() == Person.Sex.MALE)
+                                                .map(p -> p.getName())
+                                                .collect(Collectors.toList());
+        System.out.println(namesOfMaleMembersCollect);
+        Map<Person.Sex, List<Person>> byGender= roster
+                                                .stream()
+                                                .collect(
+                                                    Collectors.groupingBy(Person::getGender));
+        System.out.println(byGender);
+        Map<Person.Sex, List<String>> namesByGender = roster
+                                                        .stream()
+                                                        .collect(
+                                                            Collectors.groupingBy(
+                                                                Person::getGender,                      
+                                                                Collectors.mapping(
+                                                                    Person::getName,
+                                                                    Collectors.toList())));
+        System.out.println(namesByGender);
+        Map<Person.Sex, Integer> totalAgeByGender = roster
+                                                    .stream()
+                                                    .collect(
+                                                        Collectors.groupingBy(
+                                                            Person::getGender,                      
+                                                            Collectors.reducing(
+                                                                0,
+                                                                Person::getAge,
+                                                                Integer::sum)));
+        System.out.println(totalAgeByGender);     
+        Map<Person.Sex, Double> averageAgeByGender = roster
+                                                    .stream()
+                                                    .collect(
+                                                        Collectors.groupingBy(
+                                                            Person::getGender,                      
+                                                            Collectors.averagingInt(Person::getAge)));
+        System.out.println(averageAgeByGender);
+        
+        double averageP = roster
+                            .parallelStream()
+                            .filter(p -> p.getGender() == Person.Sex.MALE)
+                            .mapToInt(Person::getAge)
+                            .average()
+                            .getAsDouble();
+        System.out.println(averageP);
     }
     
     public void mapTest () {

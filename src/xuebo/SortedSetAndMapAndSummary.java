@@ -5,11 +5,15 @@
  */
 package xuebo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -22,7 +26,7 @@ import java.util.TreeSet;
  *
  * @author xuebo
  */
-public interface SortedSetAndMap {
+public interface SortedSetAndMapAndSummary {
     
     public static void test(){
         
@@ -35,6 +39,12 @@ public interface SortedSetAndMap {
         
         outputSortedMap();
         outputSortedMap2();
+        outputSortedMap3();
+        
+        outputSummary();
+        outputSummary2();
+        outputSummary3();
+        
     }
    
     
@@ -190,23 +200,33 @@ public interface SortedSetAndMap {
     }  
     
       public static void outputSortedMap(){  
-        HashMap<String,String> map=new HashMap<String, String>();    
+        HashMap<String,String> map=new HashMap<String, String>(); 
+        long a = System.nanoTime();
           map.put("3","55");    
-          map.put("2", "22");    
+          map.put("2", "22");
           map.put("1", "33");    
           for (Entry<String,String> entry: map.entrySet()) {    
-           System.out.println("排序之前:"+entry.getKey()+" 值"+entry.getValue());    
-               
-          }    
+          System.out.println("before:"+entry.getKey()+" Value"+entry.getValue());    
+              
+          }
+          long b = System.nanoTime();
+          System.out.println(b-a);
+          
           System.out.println("===============");    
-          SortedMap<String,String> sort=new TreeMap<String,String>(map);    
+          SortedMap<String,String> sort=new TreeMap<String,String>(map); 
+          long c = System.nanoTime();
           Set<Entry<String,String>> entry1=sort.entrySet();    
           Iterator<Entry<String,String>> it=entry1.iterator();    
           while(it.hasNext())    
           {    
            Entry<String,String> entry=it.next();    
-           System.out.println("排序之后:"+entry.getKey()+" 值"+entry.getValue());    
-          }   
+           System.out.println("after:"+entry.getKey()+" Value"+entry.getValue());    
+          } 
+          
+          long d = System.nanoTime();
+          System.out.println(d-c);
+          
+          System.out.println("**********************");
     }   
       
       
@@ -227,6 +247,111 @@ public interface SortedSetAndMap {
         while (iter.hasNext()) {  
             Double key = iter.next();  
             System.out.println(key + ":" + map.get(key));  
-        }  
+        } 
+        
+        System.out.println("**********************");
+        
     }  
+    
+    public static void outputSortedMap3() {
+            Map<String, String> map = new TreeMap<String, String>();
+            map.put("a", "ddddd");
+            map.put("c", "bbbbb");
+            map.put("d", "aaaaa");
+            map.put("b", "ccccc");
+        
+        //将map.entrySet()转换成list
+        List<Map.Entry<String,String>> list = new ArrayList<Map.Entry<String,String>>(map.entrySet());
+        //通过比较器来实现排序
+        Collections.sort(list,new Comparator<Map.Entry<String,String>>() {
+            //升序排序
+        public int compare(Entry<String, String> o1,
+                    Entry<String, String> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+            
+        });
+        
+        for(Map.Entry<String,String> mapping:list){ 
+               System.out.println(mapping.getKey()+":"+mapping.getValue()); 
+          } 
+        System.out.println("**********************");
+    }
+    
+    
+    //Question1: At the beginning of this lesson, you learned that the core collection interfaces are organized into two distinct inheritance trees.
+    //One interface in particular is not considered to be a true Collection, and therefore sits at the top of its own tree. What is the name of this interface? 
+    
+    //Question2: Each interface in the collections framework is declared with the <E> syntax, which tells you that it is generic.
+    //When you declare a Collection instance, what is the advantage of specifying the type of objects that it will contain? 
+    
+    //Question3: What interface represents a collection that does not allow duplicate elements? 
+    
+    //Question4: What interface forms the root of the collections hierarchy? 
+    
+    //Question5: What interface represents an ordered collection that may contain duplicate elements? 
+    
+    //Question6: What interface represents a collection that holds elements prior to processing? 
+    
+    //Question7: What interface repesents a type that maps keys to values? 
+    
+    //Question8: What interface represents a double-ended queue? 
+    
+    //Question9: Name three different ways to iterate over the elements of a List.
+    
+    //Question10: True or False: Aggregate operations are mutative operations that modify the underlying collection.
+    
+    //Question11:Consider the four core interfaces, Set, List, Queue, and Map. For each of the following four assignments, 
+    //specify which of the four core interfaces is best-suited, and explain how to use it to implement the assignment. 
+    //11.1:Whimsical Toys Inc (WTI) needs to record the names of all its employees. Every month, an employee will be chosen at random from these records to receive a free toy.
+    //11.2:WTI has decided that each new product will be named after an employee — but only first names will be used, and each name will be used only once. Prepare a list of unique first names.
+    //11.3:WTI decides that it only wants to use the most popular names for its toys. Count up the number of employees who have each first name.
+    //11.4:WTI decides that it only wants to use the most popular names for its toys. Count up the number of employees who have each first name.
+   
+    
+     public static void outputSummary() {
+        String[] args = {"aabbddeeffffffffff"} ;
+        
+        // Get and shuffle the list of arguments
+        List<String> argList = Arrays.asList(args);
+        Collections.shuffle(argList);
+        
+        // Print out the elements using JDK 8 Streams
+        argList.stream()
+        .forEach(e->System.out.format("%s ",e));
+
+        // Print out the elements using for-each
+        for (String arg: argList) {
+            System.out.format("%s ", arg);
+        }
+
+        System.out.println();
+        System.out.println("**********************");
+    }
+    
+    public static void outputSummary2()  {
+        
+        String[] args = {"aabbddeeffffffffff"} ;
+        Set<String> s = new HashSet<String>();
+        
+        for (String a : args)
+               s.add(a);
+               System.out.println(s.size() + " distinct words: " + s);
+        System.out.println("**********************");
+    }
+    
+    static void listTrim(List<String> strings) {
+        for (ListIterator<String> lit = strings.listIterator(); lit.hasNext(); ) {
+            lit.set(lit.next().trim());
+        }
+    }
+
+    public static void outputSummary3() {
+        List<String> l = Arrays.asList(" red ", " white ", " blue ");
+        listTrim(l);
+        for (String s : l) {
+            System.out.format("\"%s\"%n", s);
+        }
+       System.out.println("**********************");
+    }
 }

@@ -24,7 +24,7 @@ public class Entrance{
 //           StringDemo.test();
 //             GenericDemo.test();
 //                BasicIoDemo.test();
-                SortedSetAndMap.test();
+                SortedSetAndMapAndSummary.test();
     }
     public static void main(String[] args) throws IOException{
 //        //Hello World

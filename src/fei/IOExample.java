@@ -7,13 +7,19 @@ package fei;
 
 import java.io.BufferedReader;
 import java.io.Console;
+import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.ByteBuffer;
+import java.nio.channels.SeekableByteChannel;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
@@ -31,10 +37,54 @@ public class IOExample {
         //this.scanTest();
         //this.scanTranslationTest();
         //this.consoleTest();
+        this.path();
     }
     
     public void requried () {
         //see IOUtils
+    }
+    
+    public void path () {
+        Path path = Paths.get("/home/joe/foo");
+
+        System.out.format("toString: %s%n", path.toString());
+        System.out.format("getFileName: %s%n", path.getFileName());
+        System.out.format("getName(0): %s%n", path.getName(0));
+        System.out.format("getNameCount: %d%n", path.getNameCount());
+        System.out.format("subpath(0,2): %s%n", path.subpath(0,2));
+        System.out.format("getParent: %s%n", path.getParent());
+        System.out.format("getRoot: %s%n", path.getRoot());
+        
+        
+        try {
+            Path ip = Paths.get("/Users/feilu/Documents/analysisL/a.txt");
+            Path op = Paths.get("/Users/feilu/Documents/analysisL/b.txt");
+            byte[] b = null;
+            b = Files.readAllBytes(ip);
+            Files.write(op, b);
+            
+            SeekableByteChannel sbc = Files.newByteChannel(ip);
+            ByteBuffer buf = ByteBuffer.allocate(10);
+            buf.clear();
+            // Read the bytes with the proper encoding for this platform.  If
+            // you skip this step, you might see something that looks like
+            // Chinese characters when you expect Latin-style characters.
+            String encoding = System.getProperty("file.encoding");
+            int a = sbc.read(buf);
+            while (a > 0) {
+                
+//                buf.rewind();
+//                System.out.println(Charset.forName(encoding).decode(buf));
+                buf.flip();
+                System.out.println(Charset.forName(encoding).decode(buf));
+                a = sbc.read(buf);
+            }
+            
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
     
     public void consoleTest () {

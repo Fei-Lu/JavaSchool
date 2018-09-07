@@ -19,6 +19,11 @@ public class Entrance {
 //      this.exception();
 //      this.io();
         //this.collection();
+        this.database();
+    }
+    
+    public void database () {
+        new DatabaseExample();
     }
     
     public void collection () {

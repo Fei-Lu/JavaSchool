@@ -27,6 +27,24 @@ public class DatabaseExample {
         
     }
     
+    public void connectToSQLite () {
+        String dbFileS = null;
+        Connection conn = null;
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:"+dbFileS;
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+            System.out.println("Connection to SQLite has been established.");
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM runoob_tbl");
+            
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }    
+    }
+    
     public void connectToMySQL() {
         String username = "root";
         String password = "MySQLPass1!@#";
